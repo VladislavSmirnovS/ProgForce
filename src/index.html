@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Observer</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="header__title">
+        <p>
+          На странице продемонстрирована работа Resize, Mutation, Intersection
+          Observer. Инфинити скролл (Intersection). Изменение header в
+          зависимсти от изменения другого элемента (Mutation). Изменение цвета
+          при достижении определенной ширины(Resize).
+        </p>
+        <p>
+          При инфинити скролле добавляется кастомный HTML, при нажатии на
+          который меняется DOM элемента на теневой. При изменении инпута,
+          значение передается подписанному на это изменение элементу, который
+          через Proxy принимает или не принимает значение.
+        </p>
+      </div>
+    </header>
+
+    <main class="content">
+      <form class="config">
+        <div class="config__item">
+          <label class="config__nameItem"
+            >Intersection Observer: Включить Infinity Scroll</label
+          >
+          <input class="config__checkInfinity" type="checkbox" checked />
+        </div>
+        <div class="config__item">
+          <label class="config__nameItem">Resize Observer:</label>
+          <input class="config__checkResize" type="checkbox" checked />
+          <label class="config__nameItem">Ширина блока:</label>
+          <input
+            class="config__resizeValue"
+            type="range"
+            value="600"
+            min="300"
+            max="1900"
+          />
+        </div>
+        <div class="config__item">
+          <label class="config__nameItem">Mutation Observer:</label>
+          <div class="config__counter">
+            <button class="config__counterBtn mutation_plus">+</button>
+            <p class="config__counterValue">0</p>
+            <button class="config__counterBtn mutation_minus">-</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="proxy">
+        <form class="proxy__form">
+          <label>Значение для отслеживания:</label>
+          <input
+            class="config__proxyValue"
+            type="number"
+            placeholder="Только четные"
+            required
+          />
+          <button type="submit" class="test">ok</button>
+        </form>
+        <div class="proxy__block">
+          <label class="proxy__nameItem">Вывожу значение из подписки:</label>
+          <p class="proxy__value"></p>
+        </div>
+      </div>
+
+      <div class="cardList">
+        <p class="cardList__infoWidth"></p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022 Vlad</p>
+    </footer>
+
+    <template class="template">
+      <style>
+        p {
+          font-weight: bold;
+        }
+      </style>
+      <p id="message"></p>
+    </template>
+
+    <template class="template__card">
+      <card-custom class="card"></card-custom>
+    </template>
+
+    <!-- <script type="module" src="./pages/index.js"></script> -->
+  </body>
+</html>

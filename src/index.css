@@ -1,0 +1,100 @@
+.page {
+  max-width: 100%;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  position: relative;
+  justify-content: center;
+  padding: 0;
+  -mox-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  max-width: 1028px;
+  background: "white";
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  padding: 45px 0 41px;
+  margin: 0 auto 40px;
+  display: flex;
+}
+
+.proxy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proxy__block {
+  display: flex;
+  margin-left: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+.proxy__value {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.config {
+  display: flex;
+  justify-content: center;
+}
+
+.config__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  width: 200px;
+  height: 100px;
+  margin: 50px;
+  padding: 20px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.config__nameItem {
+  margin-bottom: 10px;
+}
+
+.config__counter {
+  display: flex;
+  align-items: center;
+}
+
+.config__counterValue {
+  margin: 0 10px;
+}
+
+.config__counterBtn {
+  width: 20px;
+  height: 20px;
+}
+
+.cardList {
+  width: 800px;
+}
+
+.cardList__infoWidth {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card {
+  margin: 10px;
+}
+
+.footer {
+  max-width: 880px;
+  margin: 0 auto 60px;
+}
