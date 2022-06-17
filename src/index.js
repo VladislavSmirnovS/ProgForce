@@ -1,8 +1,11 @@
 import "./index.css";
 import { Card } from "./components/CustomElement.js";
-import { infintyScroll, addNewCards } from "./components/IntersactionObserver.js";
+import {
+  infintyScroll,
+  addNewCards,
+} from "./components/IntersactionObserver.js";
 import { mutationHeader } from "./components/MutationObserver.js";
-import { setProxy, EventObserver } from "./components/OberverWithProxy.js";
+import { EventObserver } from "./components/OberverWithProxy.js";
 import { resizeObserver } from "./components/ResizeObserver.js";
 
 const cardList = document.querySelector(".cardList");
@@ -14,6 +17,7 @@ const slider = document.querySelector(".config__resizeValue");
 const checkboxResize = document.querySelector(".config__checkResize");
 const proxyForm = document.querySelector(".proxy__form");
 const counter = document.querySelector(".config__counterValue ");
+const value = document.querySelector(".proxy__value");
 
 customElements.define("card-custom", Card);
 
@@ -52,13 +56,17 @@ mutationHeader.observe(counter, {
 });
 
 // Observer with Proxy
-const observerS = new EventObserver();
+let store = {
+  counter: 0,
+};
 
-observerS.subscribe(setProxy);
+const observer = new EventObserver(store);
+observer.subscribe((store) => (value.innerHTML = store));
 
 proxyForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  observerS.broadcast(proxyValue.value);
+  observer.proxyCount.counter = proxyValue.value;
+  observer.broadcast(observer.proxyCount.counter);
 });
 
 // Resize Observer

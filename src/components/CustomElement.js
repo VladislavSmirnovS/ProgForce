@@ -1,5 +1,3 @@
-const template = document.querySelector(".template")
-
 class Card extends HTMLElement {
   constructor() {
     super();
@@ -9,11 +7,15 @@ class Card extends HTMLElement {
     `;
     this.addEventListener("click", () => {
       this.attachShadow({ mode: "open" });
-      this.shadowRoot.append(template.content.cloneNode(true)); 
-      this.shadowRoot.getElementById("message").innerHTML =
-        "Привет из Shadow Dom!";
+      this.shadowRoot.innerHTML = `
+      <style>
+        p {
+          font-weight: bold;
+        }
+      </style>
+      <p>Привет из Shadow Dom!</p>
+    `;
     });
-    
   }
 }
 
